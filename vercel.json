@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/backend/staticfiles/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.py"
+    }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "backend.whisperlink_backend.settings"
+  }
+}
